@@ -1,0 +1,5 @@
+.stack-work/**/*
+files
+sherleontexturepack2/**
+/target
+**/*.rs.bk
