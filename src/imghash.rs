@@ -1,5 +1,5 @@
 use image;
-use image::imageops;
+use image::imageops::{self, FilterType::Triangle};
 use std::fmt::Display;
 
 pub struct Hash {
@@ -91,7 +91,7 @@ impl HashBuilder {
 
 pub fn hash_img(filename: &str, hash_size: u16) -> Result<Hash, HashError> {
     let img = image::open(filename)?;
-    let img = imageops::grayscale(&img.resize_exact(8, 8, image::FilterType::Triangle));
+    let img = imageops::grayscale(&img.resize_exact(8, 8, Triangle));
 
     let sum: u64 = img.pixels().map(|p| p[0] as u64).sum();
     let avg = sum / (hash_size as u64);
