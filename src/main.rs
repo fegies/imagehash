@@ -86,29 +86,4 @@ fn main() {
             }
         }
     });
-    // all_files.par_iter().for_each(|f| {
-    //     println!("f");
-    // });
-    // .chunks(1000)
-    // .into_iter()
-    // .map(|a| a.collect::<Vec<_>>())
-    // .for_each(|a| {
-    //     a.par_iter()
-    //         .map(|f| (imghash::hash_img(&f), f))
-    //         .for_each(|(h, f)| {
-    //             match h {
-    //                 Ok(h) => println!("{}\t{}", h.to_string(), f),
-    //                 Err(e) => eprintln!("Error: {} in File {}", e, f),
-    //             };
-    //         })
-    // });
-    // .for_each(|f| {
-    //     pool.spawn(move || {
-    //         let h = imghash::hash_img(&f);
-    //         match h {
-    //             Ok(h) => println!("{:016x}\t{}", h, f),
-    //             Err(e) => eprintln!("Error: {} in File {}", e, f)
-    //         };
-    //     });
-    // });
 }
