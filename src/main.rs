@@ -76,7 +76,7 @@ fn main() {
         .chain(batch_files.into_iter().flat_map(|f| f.lines()));
 
     all_files.par_bridge().for_each(|f| {
-        let hash = imghash::hash_img(&f, 64);
+        let hash = imghash::hash_img(&f, 8, 8);
         match hash {
             Ok(h) => {
                 println!("{}\t->\t{}", f, h);
